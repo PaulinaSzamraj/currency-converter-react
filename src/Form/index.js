@@ -20,9 +20,11 @@ const Form = ({ calculateResult, result }) => {
           <label>
             <span className="form__labelText"> Kwota w PLN</span>
             <input
+              value={amount}
+              onChange={({ target }) => setAmount(target.value)}
               className="form__field"
               type="number"
-              name="valueNumber"
+              step="0.01"
               min="0"
               required
             />
@@ -31,17 +33,23 @@ const Form = ({ calculateResult, result }) => {
         <p>
           <label>
             <span className="form__labelText">Wybierz walutę</span>
-            <select className="form__field" value={currency} onChange={({ target }) => setCurrency(target.value)}>
-           {currencies.map((currency) => (
-            <option key={currency.short} value={currency.short}>{currency.name}</option>
-           ))}
+            <select
+              className="form__field"
+              value={currency}
+              onChange={({ target }) => setCurrency(target.value)}
+            >
+              {currencies.map((currency) => (
+                <option key={currency.short} value={currency.short}>
+                  {currency.name}
+                </option>
+              ))}
             </select>
           </label>
         </p>
         <p>
           <button className="form__button">Przelicz</button>
         </p>
-        <Result result={ result } />
+        <Result result={result} />
       </fieldset>
     </form>
   );
