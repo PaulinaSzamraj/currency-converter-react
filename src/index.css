@@ -18,3 +18,13 @@ html {
   justify-content: center;
   min-height: 100vh;
 }
+
+.app {
+  border: solid 2px #02fd2497;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #a7e1af;
+  box-shadow: 10px 5px 10px #757474;
+  background-color: #0b180c;
+}
