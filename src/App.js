@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { currencies } from "./currencies";
 import Form from "./Form";
-import Clock from "./Clock";
+import { Clock } from "./Clock";
 
 function App() {
   const [result, setResult] = useState();
